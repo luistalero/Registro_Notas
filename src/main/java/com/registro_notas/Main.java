@@ -7,15 +7,33 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\nIngrese la cantidad de estudiantes: ");
+        while (!sc.hasNextInt()) {
+            System.err.println("Error: Debe Ingresar un numero.");
+            sc.next();
+            System.out.print("Seleccione una opción: ");
+
+        }
         int estudiantes = sc.nextInt();
         sc.nextLine();
 
         Map<String, Double> registroNotas = new HashMap<>();
         for (int i = 0; i < estudiantes; i++) {
             System.out.print("Ingrese el nombre del estudiante " + (i + 1) + ": ");
+            while (sc.hasNextInt() || sc.hasNextDouble()) {
+                System.err.println("Error: Debe Ingresar un nombre.");
+                sc.next();
+                System.out.print("Ingrese el nombre del estudiante " + (i + 1) + ": ");
+
+            }
             String nombre = sc.nextLine();
 
             System.out.print("Ingrese la nota de " + nombre + ": ");
+            while (!sc.hasNextDouble()) {
+                System.err.println("Error: Debe Ingresar un numero.");
+                sc.next();
+                System.out.print("Ingrese la nota de " + nombre + ": ");
+
+            }
             double nota = sc.nextDouble();
             sc.nextLine();
 
@@ -35,7 +53,15 @@ public class Main {
             """;
             System.out.println(menu);
             System.out.print("Seleccione una opción: ");
+
+            while (!sc.hasNextInt()) {
+                System.err.println("Error: Debe Ingresar un numero.");
+                sc.next();
+                System.out.print("Seleccione una opción: ");
+
+            }
             opcion = sc.nextInt();
+            sc.nextLine();
 
             switch (opcion) {
                 case 1:
