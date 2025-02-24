@@ -74,10 +74,10 @@ public class Main {
                 case 2:
                     boolean buscarOtro;
                     do {
-                        System.out.println("Ingrese El nombre de un estudiante para buscar su nota: ");
+                        System.out.print("Ingrese El nombre de un estudiante para buscar su nota: ");
                         String nombreBusqueda = sc.nextLine();
                         if (registroNotas.containsKey(nombreBusqueda)) {
-                            System.out.println("La nota de " + nombreBusqueda + "es: " + registroNotas.get(nombreBusqueda));
+                            System.out.println("La nota de " + nombreBusqueda + " es: " + registroNotas.get(nombreBusqueda));
                         } else {
                             System.out.println("El estudiante \"" + nombreBusqueda + "\" no esta en el registro.");
                         }
